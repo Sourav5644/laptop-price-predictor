@@ -1,0 +1,50 @@
+columns:
+  #- _id: int
+  - Unnamed: int
+  - Company: category
+  - TypeName: category
+  - Inches: float
+  - ScreenResolution: category
+  - Cpu: category
+  - Ram: category
+  - Memory: category
+  - Gpu: category
+  - OpSys: category
+  - Weight: category
+  - Price: float
+
+
+numerical_columns:
+  - Inches
+  - Price
+
+categorical_columns:
+  - Company
+  - TypeName
+  - ScreenResolution
+  - Cpu
+  - Ram
+  - Memory
+  - Gpu
+  - OpSys
+  - Weight   
+
+
+drop_columns:
+  - 'Unnamed: 0'
+
+one_hot_encoding_columns:
+  - Company
+  - TypeName
+  - cpu_name
+  - gpu_brand
+  - os
+
+num_columns:
+  - Ram
+  - Weight
+  - Touchscreen
+  - SSD
+  - HDD
+
+target_column: Price

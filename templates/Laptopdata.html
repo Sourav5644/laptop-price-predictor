@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction</title>
+    <!-- Corrected the CSS path -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Laptop Price Prediction</h1>
+    
+    <form method="post">
+        <label for="Company">Company:</label>
+        <select name="Company" required>
+            <option value="">-- Select Company --</option>
+            <option>Dell</option>
+            <option>HP</option>
+            <option>Apple</option>
+            <option>Asus</option>
+            <option>Acer</option>
+            <option>MSI</option>
+            <option>Razer</option>
+            <option>Samsung</option>
+            <option>Microsoft</option>
+            <option>Lenovo</option>
+        </select>
+
+        <label for="TypeName">Laptop Type:</label>
+        <select name="TypeName" required>
+            <option value="">-- Select Type --</option>
+            <option>Notebook</option>
+            <option>Gaming</option>
+            <option>Ultrabook</option>
+            <option>Workstation</option>
+            <option>2 in 1 Convertible</option>
+            <option>Netbook</option>
+        </select>
+
+        <label for="Ram">RAM (GB):</label>
+        <input type="number" name="Ram" min="2" max="64" required>
+
+        <label for="Weight">Weight (kg):</label>
+        <input type="text" name="Weight" required>
+
+        <label for="Touchscreen">Touchscreen (0 = No, 1 = Yes):</label>
+        <input type="number" name="Touchscreen" min="0" max="1" required>
+
+        <label for="IPS">IPS Display (0 = No, 1 = Yes):</label>
+        <input type="number" name="IPS" min="0" max="1" required>
+
+        <label for="cpu_name">CPU Brand:</label>
+        <select name="cpu_name" required>
+            <option value="">-- Select CPU --</option>
+            <option>Intel Core i3</option>
+            <option>Intel Core i5</option>
+            <option>Intel Core i7</option>
+            <option>AMD Processor</option>
+            <option>Other Intel Processor</option>
+        </select>
+
+        <label for="SSD">SSD (GB):</label>
+        <input type="number" name="SSD" min="0" step="128" required>
+
+        <label for="HDD">HDD (GB):</label>
+        <input type="number" name="HDD" min="0" step="500" required>
+
+        <label for="gpu_brand">GPU Brand:</label>
+        <select name="gpu_brand" required>
+            <option value="">-- Select GPU --</option>
+            <option>Nvidia</option>
+            <option>Intel</option>
+            <option>AMD</option>
+        </select>
+
+        <label for="os">Operating System:</label>
+        <select name="os" required>
+            <option value="">-- Select OS --</option>
+            <option>windows</option>
+            <option>mac</option>
+            <option>Linux</option>
+            <option>No OS</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <form method="get" action="/train">
+        <button type="submit" class="train-button">Train Model</button>
+    </form>
+
+        {% if context %}
+            <div class="result">
+                <h2>Result: {{ context }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
